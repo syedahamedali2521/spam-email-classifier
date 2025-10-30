@@ -9,7 +9,11 @@ from sklearn.metrics import classification_report, accuracy_score
 # =========================
 # 1️⃣ Load Dataset
 # =========================
-df = pd.read_csv("dataset/spam.csv")
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+data_path = os.path.join(BASE_DIR, "dataset", "spam.csv")
+df = pd.read_csv(data_path)
+
 
 # Ensure correct column names
 df.columns = ["label", "message"]
